@@ -1,0 +1,5 @@
+node_modules
+.git
+.env 
+logs
+dist // not necessary without dist folder in root directory, just for ref
