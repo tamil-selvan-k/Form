@@ -1,0 +1,19 @@
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21
+          cache: npm
+      - run: echo "Node installed and configured"
+      - run: npm install
+      - run: echo "NPM installed"
+      - run: npm start & sleep 5 & curl http://localhost:5000
+      - run: echo "App ran and ended successfully"
